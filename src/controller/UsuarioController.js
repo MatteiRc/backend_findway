@@ -44,14 +44,14 @@ module.exports = {
     },
 
     async store(req,res) {
-        const { nome, senha, telefone, estado, cidade, email} = req.body;
-        const usuario = await Usuario.create({nome,senha,telefone,estado,cidade,email});
+        const { nome, senha, telefone, estado, cidade, email, empresa, cargo, bairro, cep, cnpj} = req.body;
+        const usuario = await Usuario.create({nome,senha,telefone,estado,cidade,email,empresa,cargo,bairro,cep,cnpj});
         return res.json(usuario);
     },
 
     async updateUsuario(req,res){
         const {id_usuario} = req.params;
-        const {nome,senha,telefone,estado,cidade,email} = req.body;
+        const {nome,senha,telefone,estado,cidade,email,empresa,cargo,bairro, cep, cnpj} = req.body;
 
         const usuario = await Usuario.findByPk(id_usuario);
 
@@ -64,6 +64,11 @@ module.exports = {
             usuario.estado = estado;
             usuario.cidade = cidade;
             usuario.email = email;
+            usuario.empresa = empresa;
+            usuario.cargo = cargo;
+            usuario.bairro = bairro;
+            usuario.cep = cep;
+            usuario.cnpj = cnpj;
 
             await usuario.save();
 

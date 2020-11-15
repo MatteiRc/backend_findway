@@ -9,8 +9,13 @@ class Usuario extends Model{
             telefone: DataTypes.STRING,
             estado: DataTypes.STRING,
             cidade: DataTypes.STRING,
+            bairro: DataTypes.STRING,
+            cep: DataTypes.STRING,
+            cnpj: DataTypes.STRING,
             email: DataTypes.STRING, 
-            anuncios_favoritos: DataTypes.STRING
+            anuncios_favoritos: DataTypes.STRING,
+            empresa: DataTypes.STRING,
+            cargo: DataTypes.STRING,
         },{
             sequelize : connection
         })

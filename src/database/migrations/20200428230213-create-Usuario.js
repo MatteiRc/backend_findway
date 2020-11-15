@@ -35,6 +35,29 @@ module.exports = {
          allowNull:false
        },
 
+       bairro:{
+        type:Sequelize.STRING,
+        allowNull:false
+       },
+       cep:{
+        type:Sequelize.STRING,
+        allowNull:false
+       },
+       cnpj:{
+        type:Sequelize.STRING,
+        allowNull:false
+       },
+
+       empresa:{
+        type:Sequelize.STRING,
+        allowNull:false
+      },
+
+      cargo:{
+        type:Sequelize.STRING,
+        allowNull:false
+      },
+
        email:{
          type:Sequelize.STRING,
          allowNull:false
