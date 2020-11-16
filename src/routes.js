@@ -6,11 +6,17 @@ const UsuarioController = require('./controller/UsuarioController');
 const AnuncioController = require('./controller/AnuncioController');
 const ChatController = require('./controller/ChatController');
 const DenunciaController = require('./controller/DenunciaController');
+const AdmController = require('./controller/AdmController');
 const routes = express.Router();
 
 routes.get('/',(req,res) =>{
     return res.json({text: "hello world"});
 })
+
+routes.get('/admUsuarios', AdmController.usuarios);
+routes.get('/admEmpresas', AdmController.empresas);
+routes.get('/admCurriculos', AdmController.curriculos);
+routes.get('/admVagas', AdmController.vagas);
 
 routes.get('/usuarios',UsuarioController.index);
 routes.get('/usuario/:id_usuario',UsuarioController.FindOne);
